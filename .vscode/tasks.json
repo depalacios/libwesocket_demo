@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile",
+            "type": "shell",
+            "command": "source /opt/fsl-imx-xwayland/6.12-walnascar/environment-setup-armv8a-poky-linux && aarch64-poky-linux-gcc --sysroot=/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux -g ${fileBasename} include/custom/*.c -Iinclude -Iinclude/websockets -Iinclude/custom -Llib -lwebsockets -lssl -lcrypto -lz -lcap -o ${fileBasenameNoExtension}",
+            "group": {
+                "kind": "build",
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Start GDB server",
+            "dependsOn": [
+                "Compile"
+            ],
+            "type": "shell",
+            "command": "scp ${fileBasenameNoExtension} root@${config:myRemoteIpAddr}:/root/${config:myRemoteFolder}/",         
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiles and send file to FRDM board."
+        }
+    ]
+}

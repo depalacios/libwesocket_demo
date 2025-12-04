@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Yocto-ARM64",
+            "includePath": [
+                "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/include/**",
+                "${workspaceFolder}/lib",
+                "${workspaceFolder}/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm64",
+            "browse": {
+                "path": [
+                    "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/include/**",
+                    "${workspaceFolder}/lib",
+                    "${workspaceFolder}/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}
