@@ -2,14 +2,14 @@ Secure Stream Echo Server Demo using Libwebsocket library for FRDM-IMX91 develop
 
 # Compile
 Press <b>Ctrl+Shift+B</b><br>
-In order to compile and upload executable to targer you need to change variable values in settings.json:
+In order to compile and upload executable to targer, you need to change the next variable values in <b>settings.json</b> in <b>.vscode</b> folder:
 
 - myRemoteIpAddr
 - myRemoteFolder
 
 # Debug
 Press <b>F5</b><br>
-In order to debug you need to start gdb server:
+In order to debug you need to start <b>gdb server</b>:
 
 - gdbserver :2345 ./executable
 
@@ -30,7 +30,7 @@ In order to debug you need to start gdb server:
 ```
 
 # Run in target
-In order to run in target you need in the same folder the next files
+In order to run in target, you need in the same folder the next files:
 
 - libwebsockets.so
 - policy.json
