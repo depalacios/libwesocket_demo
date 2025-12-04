@@ -15,7 +15,7 @@
             "problemMatcher": "$gcc"
         },
         {
-            "label": "Start GDB server",
+            "label": "Send executable to traget",
             "dependsOn": [
                 "Compile"
             ],

@@ -8,7 +8,7 @@
             "cwd": "${workspaceFolder}",
             "targetArchitecture": "arm64",
             "miDebuggerPath": "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-gdb", 
-            "miDebuggerServerAddress": "192.168.1.40:2345", 
+            "miDebuggerServerAddress": "${config:myRemoteIpAddr}:2345", 
             "MIMode": "gdb",
             "setupCommands": [
                 {
