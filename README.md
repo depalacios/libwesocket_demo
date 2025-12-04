@@ -16,7 +16,7 @@ In order to debug you need to start gdb server:
 
 # Repo structre
 
-.
+```text
 ├── .vscode/            # VS Code config folder
 ├── include/            # Program libraries
 │   ├── custom/         # Custom libraries
@@ -27,6 +27,7 @@ In order to debug you need to start gdb server:
 ├── main.c              # Main application
 ├── policy.json         # Secure Streams policy
 └── readme.md           # Project documentation
+```
 
 # Run in target
 In order to run in target you need in the same folder the next files
