@@ -1,6 +1,8 @@
 const WebSocket = require('ws');
 
-const ws = new WebSocket('wss://192.168.1.40:5000/echo/', {
+const serverIp = "192.168.1.40:5000";
+
+const ws = new WebSocket(`wss://${serverIp}/echo/`, {
     rejectUnauthorized: false  // Allow self-signed certificates
 });
 
