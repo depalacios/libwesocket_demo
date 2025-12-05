@@ -76,10 +76,3 @@ static lws_ss_state_return_t server_srv_state(void *userobj, void *sh, lws_ss_co
 
 	return LWSSSSRET_OK;
 }
-
-
-LWS_SS_INFO("secure_stream_server", server_srv_t)
-	.rx          	= server_srv_rx,
-	.tx				= server_srv_tx,
-	.state			= server_srv_state,
-}; 

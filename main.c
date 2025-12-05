@@ -1,7 +1,7 @@
 #include <libwebsockets.h>
 #include <signal.h>
 
-extern const lws_ss_info_t ssi_server_srv_t; // Check /include/custom/ss_server.c
+extern const lws_ss_info_t ssi_server_srv_t; // Check /include/custom/ss_server.h
 
 static struct lws_context *cx;
 int test_result = 0, multipart;

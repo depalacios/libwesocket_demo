@@ -16,3 +16,9 @@ LWS_SS_USER_TYPEDEF
 static lws_ss_state_return_t server_srv_rx(void *userobj, const uint8_t *buf, size_t len, int flags);
 static lws_ss_state_return_t server_srv_tx(void *userobj, lws_ss_tx_ordinal_t ord, uint8_t *buf, size_t *len, int *flags);
 static lws_ss_state_return_t server_srv_state(void *userobj, void *sh, lws_ss_constate_t state, lws_ss_tx_ordinal_t ack);
+
+LWS_SS_INFO("secure_stream_server", server_srv_t)
+	.rx          	= server_srv_rx,
+	.tx				= server_srv_tx,
+	.state			= server_srv_state,
+}; 
