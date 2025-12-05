@@ -17,16 +17,17 @@ In order to debug you need to start <b>gdb server</b>:
 # Repo structre
 
 ```text
-├── .vscode/            # VS Code config folder
-├── include/            # Program libraries
-│   ├── custom/         # Custom libraries
-│   └── websockets/     # libwebsockets library
+├── .vscode/                    # VS Code config folder
+├── include/                    # Program libraries
+│   ├── custom/                 # Custom libraries
+│   └── websockets/             # libwebsockets library
 │
-├── lib/                # .so / .a compiled libraries
+├── lib/                        # .so / .a compiled libraries
 │
-├── main.c              # Main application
-├── policy.json         # Secure Streams policy
-└── readme.md           # Project documentation
+├── web_socket_node_client      # A simple websocket client connection using Node
+├── main.c                      # Main application
+├── policy.json                 # Secure Streams policy
+└── readme.md                   # Project documentation
 ```
 
 # Run in target
