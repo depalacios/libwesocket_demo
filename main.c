@@ -81,8 +81,7 @@ int main(int argc, const char **argv)
 #if defined(LWS_WITH_PLUGINS)
 	info.pvo = &pvo;
 #endif
-	info.options =
-		LWS_SERVER_OPTION_HTTP_HEADERS_SECURITY_BEST_PRACTICES_ENFORCE;
+	info.options = LWS_SERVER_OPTION_HTTP_HEADERS_SECURITY_BEST_PRACTICES_ENFORCE;
 
 #if defined(LWS_WITH_TLS)
 	if (lws_cmdline_option(argc, argv, "-s")) {

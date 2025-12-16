@@ -37,3 +37,9 @@ In order to run in target, you need in the same folder the next files:
 - libwebsockets.so
 - policy.json
 - main (Executable)
+
+## Self-signed certificate
+openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 \
+  -keyout localhost-100y.key \
+  -out localhost-100y.cert \
+  -subj "/C=CO/ST=Cundinamarca/L=Bogota/O=MiProyectoIoT/CN=192.168.1.40"
