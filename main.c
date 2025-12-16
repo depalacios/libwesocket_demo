@@ -1,5 +1,6 @@
 #include <libwebsockets.h>
 #include <signal.h>
+#include <syko_handler.h>
 
 extern const lws_ss_info_t ssi_server_srv_t; // Check /include/custom/ss_server.h
 
@@ -27,11 +28,16 @@ static void sigint_handler(int sig)
 int main(int argc, const char **argv)
 {
 	struct lws_context_creation_info info;		
-
+	
 	lws_context_info_defaults(&info, "policy.json");
 	lws_cmdline_option_handle_builtin(argc, argv, &info);	
 	signal(SIGINT, sigint_handler);
 
+	if(initCanBus()){
+		lwsl_user("Socket init fail.\n");
+		return 1;
+	}
+	
 	lwsl_user("LWS Secure Streams Server\n");
 
 	info.early_smd_cb		= smd_cb;

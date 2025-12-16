@@ -1,4 +1,6 @@
 #include <libwebsockets.h>
+#include <cjson.h>
+#include "syko_handler.h"
 
 typedef enum {
     CHANNEL_UNKNOWN = 0,
@@ -7,7 +9,7 @@ typedef enum {
 } channel_type_t;
 
 LWS_SS_USER_TYPEDEF
-	char						payload[200];
+	char						payload[1024];
 	size_t						size;
 	size_t						pos;
 	// channel_type_t 				type;

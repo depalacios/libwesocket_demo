@@ -16,7 +16,8 @@
                 "path": [
                     "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/include/**",
                     "${workspaceFolder}/lib",
-                    "${workspaceFolder}/include"
+                    "${workspaceFolder}/include",
+                    "${workspaceFolder}/include/**"
                 ],
                 "limitSymbolsToIncludedHeaders": true
             }
