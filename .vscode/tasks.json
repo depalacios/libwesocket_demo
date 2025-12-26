@@ -4,7 +4,7 @@
         {
             "label": "Compile",
             "type": "shell",
-            "command": "source /opt/fsl-imx-xwayland/6.12-walnascar/environment-setup-armv8a-poky-linux && aarch64-poky-linux-gcc --sysroot=/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux -g ${fileBasename} include/custom/*.c include/cjson/*.c -Iinclude -Iinclude/websockets -Iinclude/custom -Iinclude/cjson -Llib -lwebsockets -lssl -lcrypto -lz -lcap -o ${fileBasenameNoExtension}",
+            "command": "source /opt/fsl-imx-xwayland/6.12-walnascar/environment-setup-armv8a-poky-linux && aarch64-poky-linux-gcc --sysroot=/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux -g ${fileBasename} include/custom/*.c include/cjson/*.c -Iinclude -Iinclude/websockets -Iinclude/custom -Iinclude/cjson -Iinclude/libuv -Llib -lwebsockets -lwebsockets-evlib_uv -luv -lssl -lcrypto -lz -lcap -lpthread -lm -o ${fileBasenameNoExtension}",
             "group": {
                 "kind": "build",
             },

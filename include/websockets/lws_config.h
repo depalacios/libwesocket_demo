@@ -6,8 +6,8 @@
 	#endif
 #endif
 
-#define LWS_INSTALL_DATADIR "/usr/share"
-#define LWS_INSTALL_LIBDIR "/usr/lib"
+#define LWS_INSTALL_DATADIR "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/share"
+#define LWS_INSTALL_LIBDIR "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/lib"
 #define LWS_LIBRARY_VERSION_MAJOR 4
 #define LWS_LIBRARY_VERSION_MINOR 4
 #define LWS_LIBRARY_VERSION_PATCH_ELABORATED 99-v4.4.0-154-g15c4afb9
@@ -81,7 +81,7 @@
 /* #undef LWS_HAVE_MBEDTLS_NET_SOCKETS */
 /* #undef LWS_HAVE_MBEDTLS_SSL_NEW_SESSION_TICKET */
 /* #undef LWS_HAVE_MBEDTLS_AUTH_KEY_ID */
-/* #undef LWS_HAVE_NEW_UV_VERSION_H */
+#define LWS_HAVE_NEW_UV_VERSION_H
 #define LWS_HAVE_OPENSSL_ECDH_H
 #define LWS_HAVE_OPENSSL_STACK
 #define LWS_HAVE_PIPE2
@@ -187,7 +187,7 @@
 /* #undef LWS_WITH_HTTP_PROXY */
 /* #undef LWS_WITH_HTTP_STREAM_COMPRESSION */
 #define LWS_WITH_HTTP_UNCOMMON_HEADERS
-/* #undef LWS_WITH_IPV6 */
+#define LWS_WITH_IPV6
 /* #undef LWS_WITH_JOSE */
 /* #undef LWS_WITH_CBOR */
 #define LWS_WITH_CBOR_FLOAT
@@ -196,7 +196,7 @@
 #define LWS_WITH_LHP
 /* #undef LWS_WITH_LIBEV */
 /* #undef LWS_WITH_LIBEVENT */
-/* #undef LWS_WITH_LIBUV */
+#define LWS_WITH_LIBUV
 /* #undef LWS_WITH_SDEVENT */
 #define LWS_WITH_LWSAC
 #define LWS_LOGS_TIMESTAMP
@@ -259,10 +259,10 @@
 /* #undef LWS_WITH_ZIP_FOPS */
 /* #undef USE_OLD_CYASSL */
 /* #undef USE_WOLFSSL */
-/* #undef LWS_WITH_EVENT_LIBS */
+#define LWS_WITH_EVENT_LIBS
 #define LWS_WITH_EVLIB_PLUGINS
 /* #undef LWS_WITH_LIBUV_INTERNAL */
-/* #undef LWS_WITH_PLUGINS_API */
+#define LWS_WITH_PLUGINS_API
 #define LWS_HAVE_RTA_PREF
 /* #undef PICO_SDK_PATH */
 #define LWS_HAVE_LINUX_IPV6_H
