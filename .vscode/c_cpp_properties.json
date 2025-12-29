@@ -1,27 +1,33 @@
 {
+    "version": 4,
     "configurations": [
         {
             "name": "Yocto-ARM64",
-            "includePath": [
-                "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/include/**",
-                "${workspaceFolder}/lib",
-                "${workspaceFolder}/include/**"
-            ],
-            "defines": [],
             "compilerPath": "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-gcc",
+            "intelliSenseMode": "linux-gcc-arm64",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "gcc-arm64",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/lib",
+
+                "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/include",
+                "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/include/glib-2.0",
+                "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/lib/glib-2.0/include"
+            ],
+            "defines": [
+                "__linux__"
+            ],
             "browse": {
                 "path": [
-                    "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/include/**",
-                    "${workspaceFolder}/lib",
-                    "${workspaceFolder}/include",
-                    "${workspaceFolder}/include/**"
+                    "${workspaceFolder}",
+                    "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/include",
+                    "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/include/glib-2.0",
+                    "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/armv8a-poky-linux/usr/lib/glib-2.0/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true
             }
         }
-    ],
-    "version": 4
+    ]
 }

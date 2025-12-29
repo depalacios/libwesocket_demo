@@ -1,6 +1,9 @@
 #include <libwebsockets.h>
 #include <signal.h>
 #include <syko_handler.h>
+#include <glib.h>
+
+static GMainLoop *glib_loop;
 
 extern const lws_ss_info_t ssi_server_srv_t; // Check /include/custom/ss_server.h
 
@@ -22,7 +25,9 @@ static int smd_cb(void *opaque, lws_smd_class_t c, lws_usec_t ts, void *buf, siz
 
 static void sigint_handler(int sig)
 {
-	lws_default_loop_exit(cx);
+	(void)sig;
+    lwsl_notice("SIGINT received, shutting down\n");
+    lws_default_loop_exit(cx);
 }
 
 int main(int argc, const char **argv)
@@ -31,17 +36,14 @@ int main(int argc, const char **argv)
 	
 	lws_context_info_defaults(&info, "policy.json");
 	lws_cmdline_option_handle_builtin(argc, argv, &info);	
+
 	signal(SIGINT, sigint_handler);
 
-	if(initCanBus()){
-		lwsl_user("Socket init fail.\n");
-		return 1;
-	}
-	
 	lwsl_user("LWS Secure Streams Server\n");
 
 	info.early_smd_cb		= smd_cb;
 	info.early_smd_class_filter	= LWSSMDCL_SYSTEM_STATE;
+	info.options |= LWS_SERVER_OPTION_GLIB;
 
 	cx = lws_create_context(&info); 
 
