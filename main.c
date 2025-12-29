@@ -27,7 +27,6 @@ static int smd_cb(void *opaque, lws_smd_class_t c, lws_usec_t ts, void *buf, siz
 
 static void sigint_handler(int sig)
 {
-	lws_default_loop_exit(cx);
 	interrupted = 1;
 }
 
@@ -74,23 +73,11 @@ int main(int argc, const char **argv)
 		signal(SIGINT, (void (*)(int))&interrupted);
 	}
 
-	int counter = 0;
 	while (!interrupted) {
-		if (use_libuv && uv_loop) {
-			// Usar libuv para el event loop
+		if (use_libuv && uv_loop)
 			uv_run(uv_loop, UV_RUN_NOWAIT);
-		}
-		
-		// Servir WebSockets
+
 		lws_service(cx, 0);
-		
-		// Mostrar actividad
-		if (counter++ % 500 == 0) {
-			printf(".");
-			fflush(stdout);
-		}
-		
-		// Pausa pequeña
 		usleep(1000);
 	}
 

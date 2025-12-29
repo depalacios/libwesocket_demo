@@ -1,5 +1,6 @@
 #include <libwebsockets.h>
 #include <cjson.h>
+#include <stdbool.h>
 #include "syko_handler.h"
 
 typedef enum {
@@ -12,7 +13,6 @@ LWS_SS_USER_TYPEDEF
 	char						payload[1024];
 	size_t						size;
 	size_t						pos;
-	// channel_type_t 				type;
 } server_srv_t;
 
 static lws_ss_state_return_t server_srv_rx(void *userobj, const uint8_t *buf, size_t len, int flags);
