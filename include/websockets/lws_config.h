@@ -176,7 +176,7 @@
 /* #undef LWS_WITH_FTS */
 #define LWS_WITH_GENCRYPTO
 /* #undef LWS_WITH_GENERIC_SESSIONS */
-/* #undef LWS_WITH_GLIB */
+#define LWS_WITH_GLIB
 /* #undef LWS_WITH_GTK */
 #define LWS_WITH_GZINFLATE
 #define LWS_WITH_HTTP2
@@ -246,8 +246,8 @@
 /* #undef LWS_WITH_SYS_NTPCLIENT */
 #define LWS_WITH_SYS_STATE
 #define LWS_HAVE_SYSTEMD_H
-/* #undef LWS_WITHOUT_TEST_SERVER */
-/* #undef LWS_WITHOUT_TESTAPPS */
+#define LWS_WITHOUT_TEST_SERVER
+#define LWS_WITHOUT_TESTAPPS
 /* #undef LWS_WITH_THREADPOOL */
 #define LWS_WITH_TLS
 /* #undef LWS_WITH_TLS_JIT_TRUST */
@@ -259,10 +259,10 @@
 /* #undef LWS_WITH_ZIP_FOPS */
 /* #undef USE_OLD_CYASSL */
 /* #undef USE_WOLFSSL */
-/* #undef LWS_WITH_EVENT_LIBS */
+#define LWS_WITH_EVENT_LIBS
 #define LWS_WITH_EVLIB_PLUGINS
 /* #undef LWS_WITH_LIBUV_INTERNAL */
-/* #undef LWS_WITH_PLUGINS_API */
+#define LWS_WITH_PLUGINS_API
 #define LWS_HAVE_RTA_PREF
 /* #undef PICO_SDK_PATH */
 #define LWS_HAVE_LINUX_IPV6_H
