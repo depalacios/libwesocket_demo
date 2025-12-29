@@ -35,5 +35,11 @@ In order to debug you need to start <b>gdb server</b>:
 In order to run in target, you need in the same folder the next files:
 
 - libwebsockets.so
+- libwebsockets.so.20
+- libwebsockets-evlib_glib.so 
 - policy.json
 - main (Executable)
+
+```bash
+LD_LIBRARY_PATH=./ ./main
+```
