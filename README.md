@@ -34,6 +34,16 @@ In order to debug you need to start <b>gdb server</b>:
 ## Run in target
 In order to run in target, you need in the same folder the next files:
 
+- libuv.so
+- libuv.so.1
+- libuv.so.1.0.0
+- libwebsockets-evlib_uv.so
 - libwebsockets.so
 - policy.json
-- main (Executable)
+- main (Executable)cd li
+  
+And use this command: 
+
+```cmd
+LD_LIBRARY_PATH=.:/usr/lib:/lib ./main
+```
