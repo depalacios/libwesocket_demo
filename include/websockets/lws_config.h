@@ -6,8 +6,8 @@
 	#endif
 #endif
 
-#define LWS_INSTALL_DATADIR "/usr/share"
-#define LWS_INSTALL_LIBDIR "/usr/lib"
+#define LWS_INSTALL_DATADIR "/usr/local/share"
+#define LWS_INSTALL_LIBDIR "/usr/local/lib"
 #define LWS_LIBRARY_VERSION_MAJOR 4
 #define LWS_LIBRARY_VERSION_MINOR 4
 #define LWS_LIBRARY_VERSION_PATCH_ELABORATED 99-v4.4.0-154-g15c4afb9
@@ -95,7 +95,7 @@
 #define LWS_HAVE_SSL_CTX_set1_param
 #define LWS_HAVE_SSL_CTX_set_ciphersuites
 #define LWS_HAVE_SSL_CTX_set_keylog_callback
-/* #undef LWS_HAVE_SSL_CTX_SET_ECDH_AUTO */
+#define LWS_HAVE_SSL_CTX_SET_ECDH_AUTO
 #define LWS_HAVE_SSL_EXTRA_CHAIN_CERTS
 #define LWS_HAVE_SSL_get0_alpn_selected
 /* #undef LWS_HAVE_SSL_CTX_EVP_PKEY_new_raw_private_key */
@@ -134,7 +134,7 @@
 /* #undef LWS_ROLE_CGI */
 /* #undef LWS_ROLE_DBUS */
 #define LWS_ROLE_H1
-#define LWS_ROLE_H2
+/* #undef LWS_ROLE_H2 */
 #define LWS_ROLE_RAW
 #define LWS_ROLE_RAW_FILE
 /* #undef LWS_ROLE_RAW_PROXY */
@@ -179,7 +179,7 @@
 /* #undef LWS_WITH_GLIB */
 /* #undef LWS_WITH_GTK */
 #define LWS_WITH_GZINFLATE
-#define LWS_WITH_HTTP2
+/* #undef LWS_WITH_HTTP2 */
 #define LWS_WITH_HTTP_BASIC_AUTH
 #define LWS_WITH_HTTP_DIGEST_AUTH
 /* #undef LWS_WITH_HTTP_BROTLI */
@@ -194,7 +194,7 @@
 #define LWS_WITH_JSONRPC
 #define LWS_WITH_LEJP
 #define LWS_WITH_LHP
-/* #undef LWS_WITH_LIBEV */
+#define LWS_WITH_LIBEV
 /* #undef LWS_WITH_LIBEVENT */
 /* #undef LWS_WITH_LIBUV */
 /* #undef LWS_WITH_SDEVENT */
@@ -247,7 +247,7 @@
 #define LWS_WITH_SYS_STATE
 #define LWS_HAVE_SYSTEMD_H
 /* #undef LWS_WITHOUT_TEST_SERVER */
-/* #undef LWS_WITHOUT_TESTAPPS */
+#define LWS_WITHOUT_TESTAPPS
 /* #undef LWS_WITH_THREADPOOL */
 #define LWS_WITH_TLS
 /* #undef LWS_WITH_TLS_JIT_TRUST */
@@ -259,10 +259,10 @@
 /* #undef LWS_WITH_ZIP_FOPS */
 /* #undef USE_OLD_CYASSL */
 /* #undef USE_WOLFSSL */
-/* #undef LWS_WITH_EVENT_LIBS */
+#define LWS_WITH_EVENT_LIBS
 #define LWS_WITH_EVLIB_PLUGINS
 /* #undef LWS_WITH_LIBUV_INTERNAL */
-/* #undef LWS_WITH_PLUGINS_API */
+#define LWS_WITH_PLUGINS_API
 #define LWS_HAVE_RTA_PREF
 /* #undef PICO_SDK_PATH */
 #define LWS_HAVE_LINUX_IPV6_H

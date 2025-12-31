@@ -43,7 +43,7 @@
             "secure_stream_server": {
                 "server": true,
                 "port": 5000,
-                "protocol": "h2",
+                "protocol": "ws",
                 "tls": true,
                 "server_cert": "self_localhost",
                 "server_key": "self_localhost_key",
