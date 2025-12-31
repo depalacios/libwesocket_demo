@@ -1,7 +1,7 @@
 #include <libwebsockets.h>
 #include <signal.h>
-#include <syko_handler.h>
 #include <glib.h>
+#include <glib-unix.h>
 
 static GMainLoop *glib_loop;
 
@@ -23,11 +23,14 @@ static int smd_cb(void *opaque, lws_smd_class_t c, lws_usec_t ts, void *buf, siz
 	return -1;
 }
 
-static void sigint_handler(int sig)
+static gboolean glib_sigint_cb(gpointer user_data)
 {
-	(void)sig;
-    lwsl_notice("SIGINT received, shutting down\n");
-    lws_default_loop_exit(cx);
+    lwsl_notice("SIGINT received, exiting GLib loop\n");
+
+    if (glib_loop)
+        g_main_loop_quit(glib_loop);
+
+    return G_SOURCE_REMOVE;
 }
 
 int main(int argc, const char **argv)
@@ -36,8 +39,6 @@ int main(int argc, const char **argv)
 	
 	lws_context_info_defaults(&info, "policy.json");
 	lws_cmdline_option_handle_builtin(argc, argv, &info);	
-
-	signal(SIGINT, sigint_handler);
 
 	lwsl_user("LWS Secure Streams Server\n");
 
@@ -52,7 +53,15 @@ int main(int argc, const char **argv)
 		return 1;
 	}
 
-	lws_context_default_loop_run_destroy(cx); 
+	glib_loop = g_main_loop_new(NULL, FALSE);
 
-	return lws_cmdline_passfail(argc, argv, test_result);
+    g_unix_signal_add(SIGINT,  glib_sigint_cb, NULL);
+    g_unix_signal_add(SIGTERM, glib_sigint_cb, NULL);
+
+    g_main_loop_run(glib_loop);
+
+    g_main_loop_unref(glib_loop);
+    lws_context_destroy(cx);
+
+	return 0;
 }
