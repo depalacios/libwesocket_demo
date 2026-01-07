@@ -98,17 +98,3 @@ int main(void)
     return 0;
 }
 ```
-
-## Notes
-The server currently supports only one client at a time. The last client to connect will be the recipient of any messages sent by the server.
-
-The library uses the libuv event loop integration provided by libwebsockets, so there's no need to call lws_service manually.
-
-The send function uses a dynamic buffer with LWS_PRE bytes prepended for libwebsockets internal use.
-
-## Limitations
-Single client support (the last connected client replaces previous ones).
-
-Text frames only (binary frames are not implemented, but can be added by modifying ws_raw_send to use LWS_WRITE_BINARY).
-
-No authentication or encryption (TLS not implemented).

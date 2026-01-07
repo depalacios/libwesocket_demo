@@ -1,5 +1,5 @@
-# Secure Stream Echo Server Demo
-Secure Stream Echo Server Demo using Libwebsocket library for FRDM-IMX91 development board.
+# Web Socket Echo Server Demo
+Web Socket Echo Server Demo using Libwebsocket library for FRDM-IMX91 development board.
 
 ## Compile
 Press <b>Ctrl+Shift+B</b><br>
@@ -20,14 +20,16 @@ In order to debug you need to start <b>gdb server</b>:
 ```text
 ├── .vscode/                    # VS Code config folder
 ├── include/                    # Program libraries
+│   ├── cjson/                  # JSON handler library
 │   ├── custom/                 # Custom libraries
-│   └── websockets/             # libwebsockets library
+│   ├── libuv/                  # Libuv library
+│   ├── websockets/             # libwebsockets library
+│   └── ws_raw/                 # Web Socket API library
 │
 ├── lib/                        # .so / .a compiled libraries
 │
-├── web_socket_node_client      # A simple websocket client connection using Node
+├── benchmark_node              # A simple websocket benchmark using Node
 ├── main.c                      # Main application
-├── policy.json                 # Secure Streams policy
 └── readme.md                   # Project documentation
 ```
 
