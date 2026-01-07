@@ -1,6 +1,6 @@
 {
     "myRemoteIpAddr": "192.168.1.40", // Board IP addr
-    "myRemoteFolder": "socket_server", // Board target execution directory
+    "myRemoteFolder": "socket_server/libuv_libs", // Board target execution directory
     "C_Cpp.default.compilerPath": "/opt/fsl-imx-xwayland/6.12-walnascar/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-gcc",
     "files.associations": {
         "operation.h": "c",
