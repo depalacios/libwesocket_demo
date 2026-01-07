@@ -2,15 +2,13 @@
 
 ## Overview
 
-`ws_raw` is a minimal WebSocket server library built on top of `libwebsockets` and `libuv`. It provides a simple API for creating WebSocket servers with minimal boilerplate. The library is designed for embedded systems and applications that require efficient, asynchronous WebSocket communication.
+`ws_raw` is a minimal WebSocket server library built on top of `libwebsockets` and `libuv`. It provides a simple API for creating WebSocket servers with minimal boilerplate. The library is designed for embedded systems and applications (FRDM-IMX91).
 
 ## Features
 
 - Simple API for creating WebSocket servers
 - Integration with libuv event loop (automatic, no need to call `lws_service` manually)
 - Callback-based message handling
-- Lightweight, single connection support (last connected client receives messages)
-- Text frame support (binary frames not implemented)
 
 ## Dependencies
 

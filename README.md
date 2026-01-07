@@ -1,5 +1,5 @@
 # Web Socket Echo Server Demo
-Web Socket Echo Server Demo using Libwebsocket library for FRDM-IMX91 development board.
+Web Socket Echo Server Demo using WS_RAW API library for FRDM-IMX91 development board.
 
 ## Compile
 Press <b>Ctrl+Shift+B</b><br>
